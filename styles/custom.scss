@@ -1,0 +1,109 @@
+/* make the customizations */
+
+
+$a15-blue: #0066B2;
+$a15-green: #2AA551;
+
+/* Override on Bootrap variables */
+
+$grid-gutter-width: 0px;
+
+$body-bg: $a15-blue;
+
+$black: $a15-blue;
+
+$font-family-sans-serif: "Poppins-Light", sans-serif;
+
+$light: white;
+
+$card-border-width: 0px;
+
+$font-weight-base: 100;
+
+$font-weight-normal: 100;
+
+$navbar-light-color: $a15-green;
+$navbar-light-hover-color: orange;
+
+/* A15 Custom variables */
+
+@font-face {
+  font-family: 'dccash';
+  src: url("../public/fonts/dccash/dc-cash-small-webfont.eot");
+  src: url('../public/fonts/dccash/dc-cash-small-webfont.eot#iefix') format('embedded-opentype'),
+  url('../public/fonts/dccash/dc-cash-small-webfont.woff') format('woff'),
+  url('../public/fonts/dccash/dc-cash-small-webfont.ttf') format('truetype'),
+  url('../public/fonts/dccash/dc-cash-small-webfont.svg#fontello') format('svg');
+}
+
+h1,
+h2,
+h3,
+h5,
+h5,
+.h5,
+h6 {
+
+  font-family: 'dccash';
+  font-size: 2em; /* 32px */
+  line-height: 2em; /* 32px */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+
+}
+
+h5, .h5 {
+  color: $a15-blue;
+}
+
+.a15-grass {
+  height: 110px;
+  background-image: url("../public/sn/grass-blue.png");
+  background-size: auto 100%;
+  background-position: -2px;
+}
+
+.a15-block-blue {
+  background-color: $a15-blue;
+}
+
+.row {
+  background-color: white;
+}
+
+.a15-footer {
+  background-color: $a15-blue;
+  padding: 2em;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.social {
+  margin: 1em 10px;
+}
+
+.navbar-brand {
+  width: 80px;
+  div {
+    overflow: inherit;
+
+  }
+  .sn-logo {
+    position: absolute;
+    height: 80px;
+    z-index: 4;
+    overflow: auto;
+    top:0px;
+  }
+}
+
+/* import bootstrap to set changes */
+@import "../node_modules/bootstrap/scss/bootstrap";
