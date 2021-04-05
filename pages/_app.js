@@ -2,6 +2,11 @@
 
 // Importing Sass with Bootstrap CSS
 import '../styles/app.scss';
+import { withTina } from 'tinacms'
+import { GitClient, GitMediaStore } from '@tinacms/git-client'
+import { MarkdownFieldPlugin } from 'react-tinacms-editor'
+
+const client = new GitClient('/___tina')
 
 function A15App({ Component, pageProps }) {
     return <Component {...pageProps} />
@@ -19,4 +24,12 @@ function A15App({ Component, pageProps }) {
 //   return { ...appProps }
 // }
 
-export default A15App
+export default withTina(A15App, {
+    enabled: true,
+    apis: {
+        git: client,
+    },
+    media: new GitMediaStore(client),
+    sidebar: true,
+    plugins: [MarkdownFieldPlugin],
+})

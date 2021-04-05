@@ -2,10 +2,13 @@
   "name": "a15-next",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -15,11 +18,22 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@tinacms/api-git": "^0.39.0",
+    "@tinacms/git-client": "^0.39.0",
     "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "gray-matter": "^4.0.2",
     "next": "10.0.6",
+    "next-tinacms-markdown": "^0.39.0",
     "react": "17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "17.0.1",
-    "sass": "^1.32.6"
+    "react-markdown": "^5.0.3",
+    "react-tinacms-editor": "^0.39.0",
+    "react-tinacms-inline": "^0.39.0",
+    "sass": "^1.32.6",
+    "styled-components": "^5.2.3",
+    "tinacms": "^0.39.0"
   }
 }

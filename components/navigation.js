@@ -13,7 +13,7 @@ export default function Navigation() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Link href="/"><Nav.Link >Home</Nav.Link></Link>
-                            <Link href="/verhuur"><Nav.Link >Verhuur</Nav.Link></Link>
+                            <Link href="/over"><Nav.Link >Over ons</Nav.Link></Link>
                             <NavDropdown title="Lidmaatschap" id="lidmaatschap">
                                 <Link href="/"><NavDropdown.Item>Lid worden</NavDropdown.Item></Link>
                                 <Link href="/"><NavDropdown.Item>Installeren</NavDropdown.Item></Link>
@@ -21,7 +21,7 @@ export default function Navigation() {
                                 <NavDropdown.Divider/>
                                 <Link href="/"><NavDropdown.Item>Lidmaatschap opzeggen</NavDropdown.Item></Link>
                             </NavDropdown>
-                            <Link href="/bestuur"><Nav.Link >Verhuur</Nav.Link></Link>
+                            <Link href="/verhuur"><Nav.Link >Verhuur</Nav.Link></Link>
                             <NavDropdown title="Veiligheid" id="veiligheid">
                                 <Link href="/privacy-statement"><NavDropdown.Item >Privacy statement</NavDropdown.Item></Link>
                                 <Link href="/sociale-veiligheid"><NavDropdown.Item >Sociale veiligheid</NavDropdown.Item></Link>
