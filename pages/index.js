@@ -4,41 +4,53 @@ import {Card, Col, Container, Image, Row} from "react-bootstrap";
 import React from "react";
 import { useMarkdownForm } from 'next-tinacms-markdown'
 import matter from 'gray-matter'
+import ReactMarkdown from 'react-markdown'
 
 export default function Home({ markdownFile }) {
 
-    const formConfig = {
-        id: markdownFile.fileRelativePath,
-        label: 'Edit Post',
+    const formOptions = {
+        label: 'Site Config',
         fields: [
             {
-                name: 'title',
+                name: 'frontmatter.title',
                 label: 'Title',
                 component: 'text',
             },
             {
-                name: 'markdownContent',
-                label: 'content',
+                name: 'frontmatter.description',
+                label: 'Description',
+                component: 'text',
+            },
+            {
+                name: 'markdownBody',
+                label: 'Body',
                 component: 'markdown',
-            }
+            },
         ],
-        initialValues: {
-            title: markdownFile.frontmatter.title,
-            markdownContent: markdownFile.frontmatter.markdownContent
-        },
-    };
+    }
 
-    const [homePage, homeForm] = useMarkdownForm(markdownFile, formConfig);
+    const [homePage, homeForm] = useMarkdownForm(markdownFile, formOptions);
 
     usePlugin(homeForm);
 
     return (
         <Layout>
-            <Row>
+            <Row className="15-block-blue content">
+                <Col lg="4">
+                    <Image src="https://www.scoutinghoogeveen.nl/modules/mod_scoutingshowcase/images/haken.png"></Image>
+                </Col>
+                <Col>
+                    <Card>
+                        <Card.Title>Welkom bij Scouting A15</Card.Title>
+                        <Card.Body><ReactMarkdown>{homePage.markdownBody}</ReactMarkdown></Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+            <Row className="content speltakken">
                 <Col lg="3">
                     <Card style={{textAlign: 'center'}}>
                         <Card.Img style={{width: '50%', margin: 'auto', marginBottom: '2em'}} src="/sn/bevers_RGB.png" />
-                        <Card.Title>{ homePage.title }</Card.Title>
+                        <Card.Title>Bevers</Card.Title>
                         <Card.Subtitle>5 t/n 7 jaar</Card.Subtitle>
                         <Card.Body>De jongste groep jongens en meiden bij Scouting A15</Card.Body>
                     </Card>
@@ -108,23 +120,13 @@ export default function Home({ markdownFile }) {
                     </Card>
                 </Col>
             </Row>
-            <Row className="15-block-blue">
-                <Col lg="4">
-                    <Image src="https://www.scoutinghoogeveen.nl/modules/mod_scoutingshowcase/images/haken.png"></Image>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Title>Welkom bij Scouting A15</Card.Title>
-                        <Card.Body>De avontuurlijkste jeugdvereniging van Hardinxveld!</Card.Body>
-                    </Card>
-                </Col>
-            </Row>
         </Layout>
     )
 }
 
 export async function getStaticProps() {
-    const data = matter.read(`content/index.md`);
+    const infoData = await import(`../content/index.md`);
+    const data = matter(infoData.default);
 
     return {
         props: {

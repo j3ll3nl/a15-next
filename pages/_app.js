@@ -9,6 +9,8 @@ import { MarkdownFieldPlugin } from 'react-tinacms-editor'
 const client = new GitClient('/___tina')
 
 function A15App({ Component, pageProps }) {
+
+
     return <Component {...pageProps} />
 }
 

@@ -16,7 +16,7 @@ export default function Layout({
         <Container fluid className="layout">
             <Navigation/>
             <Header/>
-            {children}
+                {children}
             <Footer/>
         </Container>
     )

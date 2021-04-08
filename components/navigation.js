@@ -29,7 +29,7 @@ export default function Navigation() {
                             <Link href="/contact"><Nav.Link >Contact</Nav.Link></Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link target="_blank" href="https://www.facebook.com/scoutinga15">Facebook.com/scoutinga15</Nav.Link>
+                            <Nav.Link target="_blank" href="https://www.facebook.com/scoutinga15">facebook.com/scoutinga15</Nav.Link>
                             <Nav.Link target="_blank" href="http://www.scoutshop.nl">Scoutshop</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

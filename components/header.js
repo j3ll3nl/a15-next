@@ -8,14 +8,13 @@ export default function Header() {
                 <Carousel controls={false} indicators={false} >
                     <Carousel.Item className="header-carousel">
                         <Image
-                            src="/unsplash/pioneren.jpg"
+                            src="/media/sn-touw.jpg"
                             layout="fill"
                             objectPosition="center"
                             objectFit="cover"
                         />
                         <Carousel.Caption>
-                            <h3>Welkom bij Scouting A15</h3>
-                            <p></p>
+                            <h3>Scouting A15</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
