@@ -2,4 +2,4 @@
 title: Test
 description: Test
 ---
-De avontuurlijkste jeugdvereniging van Hardinxveld!
+De avontuurlijkste jeugdvereniging van Hardinxveld.
