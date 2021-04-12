@@ -121,7 +121,7 @@ h5, .h5 {
   right: initial;
 
   h3 {
-    font-size: 5em;
+    font-size: 3em;
     text-shadow: 2px 2px 8px #000;
   }
 }
@@ -134,4 +134,13 @@ h5, .h5 {
     padding: 0em 15em;
   }
 
+}
+
+@include media-breakpoint-down(md) {
+  .navbar-collapse {
+    margin-top: 3em;
+    a {
+      font-weight: bold;
+    }
+  }
 }
